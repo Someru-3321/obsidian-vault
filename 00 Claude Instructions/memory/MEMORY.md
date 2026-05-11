@@ -12,3 +12,4 @@
 - [TicketDive 主催者管理画面](ticketdive_admin.md) — admin.ticketdive.com の登録フロー・URL・出演アーティスト名の注意点
 - [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後1日ずつバッファで空きを判定
 - [Obsidian記憶テンプレート](reference_memory_template.md) — Obsidian で ⌘⇧M → memory-entry を選ぶと Claude記憶ファイルを作成しMEMORY.mdに自動追記
+- [日本通信SIM法人 支払い方法](project_nihontsushin_sim_biz.md) — クレカ不可、口座振替 or 銀行振込のみ。窓口msp@j-com.co.jp、ポータルhttps://jpp.mvno.ne.jp/msp/login
