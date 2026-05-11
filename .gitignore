@@ -4,6 +4,9 @@
 .obsidian/workspaces.json
 .obsidian/cache
 .obsidian/plugins/*/data.json
+# 共有してよい設定は例外で許可（秘密情報なし、PC間で同じが望ましい）
+!.obsidian/plugins/obsidian-git/data.json
+!.obsidian/plugins/templater-obsidian/data.json
 
 # Trash & system
 .trash/
