@@ -1,3 +1,4 @@
+- [Obsidian Vault 指示同期システム](project_obsidian_vault_sync.md) — CLAUDE.md/memory/AGENTS.md を Vault に集約しPrivate GitHub `Someru-3321/obsidian-vault` で複数PC同期。編集は Vault 内ファイルへ直接。
 - [GitHub identity and experience](user_github.md) — username, email, new to git/GitHub as of 2026-05-02
 - [Chrome browser deviceId mapping](browser_mapping.md) — どのdeviceIdがどのアカウント (work/entertainment) かの対応表
 - [Invoicing rules](invoicing_rules.md) — 染める株式会社の請求業務（着手金は基本50%、ホタル案件のみ例外）
