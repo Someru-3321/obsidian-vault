@@ -1,0 +1,11 @@
+# Obsidian local state (machine-specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# Trash & system
+.trash/
+.DS_Store
+*.swp

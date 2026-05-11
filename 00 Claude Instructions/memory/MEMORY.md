@@ -1,0 +1,12 @@
+- [GitHub identity and experience](user_github.md) — username, email, new to git/GitHub as of 2026-05-02
+- [Chrome browser deviceId mapping](browser_mapping.md) — どのdeviceIdがどのアカウント (work/entertainment) かの対応表
+- [Invoicing rules](invoicing_rules.md) — 染める株式会社の請求業務（着手金は基本50%、ホタル案件のみ例外）
+- [payment-check system](project_payment_check.md) — ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/payment-check/ の入金照合スクリプト・運用と /check-payments コマンド
+- [setlist自動入力](project_setlist.md) — ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/setlist-script/ + Apps Script + Web App。携帯Claudeから略称セットリスト送信→自動でGoogleスプレッドシートへ反映。/setlist スキル経由。
+- [invoice-to-notion](project_invoice_to_notion.md) — 請求書PDFをチャット添付→Notion「請求書申請」DBに自動登録。invoice-to-notion スキル + ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/invoice-to-notion/submit_invoice.py。
+- [invoice-email-watcher](project_invoice_email_watcher.md) — invoice@someru.me に届いた請求書PDFをApps Script+Claude APIで自動でNotionに登録するメール監視システム。
+- [gmo-deposit-watcher](project_gmo_deposit_watcher.md) — GMOあおぞら銀行 mi-mi plus口座(2439067)への入金通知メールをApps ScriptでSlackに転送するシステム。
+- [saihate-regulation-images](project_saihate_regulation_images.md) — 最果てのハイライト レギュレーション X投稿画像生成 (PNG×3 + Canva編集用SVG×3, 1080×1609)。
+- [Notionアイドル DB status選択肢](notion_idol_db_status_options.md) — 「活動状況」7択 vs 「(AI作動)活動チェック」17択の対応関係
+- [TicketDive 主催者管理画面](ticketdive_admin.md) — admin.ticketdive.com の登録フロー・URL・出演アーティスト名の注意点
+- [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後1日ずつバッファで空きを判定
