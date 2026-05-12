@@ -11,5 +11,6 @@
 - [Notionアイドル DB status選択肢](notion_idol_db_status_options.md) — 「活動状況」7択 vs 「(AI作動)活動チェック」17択の対応関係
 - [TicketDive 主催者管理画面](ticketdive_admin.md) — admin.ticketdive.com の登録フロー・URL・出演アーティスト名の注意点
 - [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後1日ずつバッファで空きを判定
+- [mi-mi+ 郵送完了連絡テンプレ](project_mimi_shipping_template.md) — 発送完了時にLINEで送る正式テンプレ (お届け日時/追跡番号/返送先など)
 - [Obsidian記憶テンプレート](reference_memory_template.md) — Obsidian で ⌘⇧M → memory-entry を選ぶと Claude記憶ファイルを作成しMEMORY.mdに自動追記
 - [日本通信SIM法人 支払い方法](project_nihontsushin_sim_biz.md) — クレカ不可、口座振替 or 銀行振込のみ。窓口msp@j-com.co.jp、ポータルhttps://jpp.mvno.ne.jp/msp/login
