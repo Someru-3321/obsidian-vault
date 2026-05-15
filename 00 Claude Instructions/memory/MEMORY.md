@@ -7,10 +7,19 @@
 - [invoice-to-notion](project_invoice_to_notion.md) — 請求書PDFをチャット添付→Notion「請求書申請」DBに自動登録。invoice-to-notion スキル + ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/invoice-to-notion/submit_invoice.py。
 - [invoice-email-watcher](project_invoice_email_watcher.md) — invoice@someru.me に届いた請求書PDFをApps Script+Claude APIで自動でNotionに登録するメール監視システム。
 - [gmo-deposit-watcher](project_gmo_deposit_watcher.md) — GMOあおぞら銀行 mi-mi plus口座(2439067)への入金通知メールをApps ScriptでSlackに転送するシステム。
+- [contract-sign-watcher](project_contract_sign_watcher.md) — クラウドサイン/MFクラウド契約から accounting@someru.me に届く合意締結完了メールをSlack通知+Notion「同意 【済】」自動更新。yuki.watabe@配下のApps Script。
+- [rental-deadline-watcher](project_rental_deadline_watcher.md) — mi-mi+ レンタル前日朝9時に「締結待ち」「契約済 郵送待ち」のままの予約をSlack通知するApps Script。yuki.watabe@配下。
 - [saihate-regulation-images](project_saihate_regulation_images.md) — 最果てのハイライト レギュレーション X投稿画像生成 (PNG×3 + Canva編集用SVG×3, 1080×1609)。
 - [Notionアイドル DB status選択肢](notion_idol_db_status_options.md) — 「活動状況」7択 vs 「(AI作動)活動チェック」17択の対応関係
 - [TicketDive 主催者管理画面](ticketdive_admin.md) — admin.ticketdive.com の登録フロー・URL・出演アーティスト名の注意点
-- [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後1日ずつバッファで空きを判定
+- [Spotify レーベルアカウント (染める)](project_spotify_label_account.md) — Spotify for Artists は info@someru.me。仕事用Chromeでも個人垢 yuki.music0329 が居座ってることがあるので要確認。
+- [Bandsintown for Artists (染める)](project_bandsintown.md) — Spotify Live Events への配信元。admin@someru.me。最果てのハイライトはClaim&Spotify連携済み。新ライブはBandsintown側で追加。
+- [最果て 配信ストア Artists ツール](project_saihate_streaming_artist_accounts.md) — Amazon/Apple Music for Artists を admin@someru.me で Claim 申請中(Bandsintownも同じ)。saihate@someru.me は連絡先用でログインアカウントではない。
+- [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後2日ずつバッファで空きを判定
+- [mi-mi+ 予約確認返信テンプレ](project_mimi_booking_confirmation_template.md) — 新規予約問い合わせを受けた時の初回確認LINEテンプレ（mi-mi+ ブランドトーン）
 - [mi-mi+ 郵送完了連絡テンプレ](project_mimi_shipping_template.md) — 発送完了時にLINEで送る正式テンプレ (お届け日時/追跡番号/返送先など)
 - [Obsidian記憶テンプレート](reference_memory_template.md) — Obsidian で ⌘⇧M → memory-entry を選ぶと Claude記憶ファイルを作成しMEMORY.mdに自動追記
 - [日本通信SIM法人 支払い方法](project_nihontsushin_sim_biz.md) — クレカ不可、口座振替 or 銀行振込のみ。窓口msp@j-com.co.jp、ポータルhttps://jpp.mvno.ne.jp/msp/login
+- [36協定届 2026年申請](project_36agreement_2026.md) — mi-miアトリエ 様式9号の2 を2026-05-12申請。到達番号202605122121219442、有効期間〜2027/05/31。次回更新2027年4-5月
+- [染める株式会社 STORES](project_someru_stores.md) — 公開URL https://someru.shop / ログイン entertainment@someru.me / 染める inc. Shop。命名規則・カテゴリ・予約公開の注意点。
+- [アメックスプラチナ ANAマイル移行設定](amex_platinum_anamileage.md) — プラチナはANAコース+MRプラスとも無料。1,000P→1,000マイル、年間上限40,000マイル。
