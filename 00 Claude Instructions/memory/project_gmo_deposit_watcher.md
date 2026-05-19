@@ -23,10 +23,14 @@ GMOあおぞらネット銀行から `payment@someru.me` (admin@のエイリア�
 - Slack Webhook URL は Apps Script の Script Properties (`SLACK_WEBHOOK_URL`) に保存（このファイルには載せない）
 - invoice-email-watcher と同じ Notion トークン + ANTHROPIC_API_KEY を使用
 
-**初回構築時の未完了タスク**（2026-05-12時点）:
-1. ✅ Slack Webhook作成
-2. 銀行のメール通知宛先を `invoice@someru.me` → `payment@someru.me` に変更（GMOあおぞら設定で）
-3. payment@ は admin@someru.me のエイリアス（確認済み） → Apps Scriptは admin@ で作成
-4. Apps Script デプロイ + Script Properties（SLACK_WEBHOOK_URL, NOTION_TOKEN, ANTHROPIC_API_KEY）設定
-5. Notion「出入管理表【mi-mi +】」DBにinvoice-email-watcherインテグレーションを接続
-6. 実メール到着後、Claudeプロンプトに実フォーマット例を追加するとさらに精度向上
+**重要な制約（2026-05-13判明）**:
+- GMOあおぞらの「振込入金がありました」メールはプライバシー仕様で本文に**口座番号・金額・振込人名を含まない**。日時のみ。
+- そのため口座番号フィルタは無効化済み（Code.gsは全入金通知メールでSlack通知する仕様に変更）。
+- Notion自動更新も不可（マッチに必要な情報がない）。代わりに**Slack通知に未支払予約リスト（上位10件）を含める**仕様。ユーザーはSlackで該当予約を目視で識別 → Notion リンクから「支払【済】」を手動チェック。
+- Apps Scriptトリガーは**4時間ごと**＋ **watchDeposits 関数内で JST 22:00-07:59 をスキップ**するロジック付き。実質 08:00-22:00 帯のみ 1日4回前後動作（深夜の Slack 通知を避ける運用）。
+- **本番API利用申込中**（2026-05-13、open-api@gmo-aozora.com宛にメール送信）。承認後にOAuth2実装で振込人・金額の自動取得が可能になる予定。sunabarはサンドボックスで実口座データは触れない。
+
+**初回構築時の状況**（2026-05-13時点）:
+- ✅ Slack Webhook作成、Apps Script デプロイ、トリガー登録、メール宛先変更、Notion接続すべて完了
+- ✅ ANTHROPIC_API_KEY は未設定（user未保有）。コードはregexフォールバックモードで動作中。
+- 🟡 本番API承認待ち（1〜2週間スパン）

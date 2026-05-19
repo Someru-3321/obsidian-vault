@@ -17,6 +17,7 @@
 - [最果て 配信ストア Artists ツール](project_saihate_streaming_artist_accounts.md) — Amazon/Apple Music for Artists を admin@someru.me で Claim 申請中(Bandsintownも同じ)。saihate@someru.me は連絡先用でログインアカウントではない。
 - [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後2日ずつバッファで空きを判定
 - [mi-mi+ 予約確認返信テンプレ](project_mimi_booking_confirmation_template.md) — 新規予約問い合わせを受けた時の初回確認LINEテンプレ（mi-mi+ ブランドトーン）
+- [mi-mi+ LINE返信のトーン方針](project_mimi_line_tone.md) — 個別返信は絵文字控えめ（1メッセージ1〜2個）。テンプレ系はそのまま使う。
 - [mi-mi+ 郵送完了連絡テンプレ](project_mimi_shipping_template.md) — 発送完了時にLINEで送る正式テンプレ (お届け日時/追跡番号/返送先など)
 - [Obsidian記憶テンプレート](reference_memory_template.md) — Obsidian で ⌘⇧M → memory-entry を選ぶと Claude記憶ファイルを作成しMEMORY.mdに自動追記
 - [日本通信SIM法人 支払い方法](project_nihontsushin_sim_biz.md) — クレカ不可、口座振替 or 銀行振込のみ。窓口msp@j-com.co.jp、ポータルhttps://jpp.mvno.ne.jp/msp/login
