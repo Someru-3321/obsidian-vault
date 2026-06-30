@@ -1,7 +1,11 @@
+- [開発連携標準(Claude/Codex×2PC)](project_dev_sync_standard.md) — 食い違い防止: GitHub Private正本＋STATUS.md＋AGENTS.md連携ルール。7repo(booking-portal/talent-portal/mimi-anken-kanri/rental-form-vercel/mimi-web/mimi-plus-web/mimi-admin)導入済。コミット前ブランチ確認・並行git禁止の罠も。
 - [Obsidian Vault 指示同期システム](project_obsidian_vault_sync.md) — CLAUDE.md/memory/AGENTS.md を Vault に集約しPrivate GitHub `Someru-3321/obsidian-vault` で複数PC同期。編集は Vault 内ファイルへ直接。
+- [アイドルブッキングポータル](project_booking_portal.md) — booking-portal-xi.vercel.app。正本=GitHub Private `Someru-3321/booking-portal`(Claude/Codex/2PC連携・着手前pull/完了後push・STATUS.md・AGENTS.md)。`npx vercel deploy --prod`手順・Sensitive envでローカルビルド再現不可の罠・rollback。
 - [GitHub identity and experience](user_github.md) — username, email, new to git/GitHub as of 2026-05-02
+- [ユーザー本人プロフィール](user_profile.md) — 渡部勇気 (リヴェラゆき)。染める株式会社代表/プロデューサー。メディア送付等の差出人は本名「渡部勇気」
 - [Chrome browser deviceId mapping](browser_mapping.md) — どのdeviceIdがどのアカウント (work/entertainment) かの対応表
 - [Invoicing rules](invoicing_rules.md) — 染める株式会社の請求業務（着手金は基本50%、ホタル案件のみ例外）
+- [業務委託 給与明細PDF](project_gyomu_itaku_payslip.md) — スプレッドシート「給与計算【mi-mi/業務委託】」→PDF→共有ドライブ/人事関連/給与関係/業務委託 明細/{氏名}/ へ。命名規則とexport URL→DL→ローカル同期フォルダcpの手順
 - [payment-check system](project_payment_check.md) — ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/payment-check/ の入金照合スクリプト・運用と /check-payments コマンド
 - [setlist自動入力](project_setlist.md) — ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/setlist-script/ + Apps Script + Web App。携帯Claudeから略称セットリスト送信→自動でGoogleスプレッドシートへ反映。/setlist スキル経由。
 - [invoice-to-notion](project_invoice_to_notion.md) — 請求書PDFをチャット添付→Notion「請求書申請」DBに自動登録。invoice-to-notion スキル + ~/Library/CloudStorage/GoogleDrive-yuki.watabe@someru.me/マイドライブ/Claude プロジェクト/invoice-to-notion/submit_invoice.py。
@@ -9,18 +13,51 @@
 - [gmo-deposit-watcher](project_gmo_deposit_watcher.md) — GMOあおぞら銀行 mi-mi plus口座(2439067)への入金通知メールをApps ScriptでSlackに転送するシステム。
 - [contract-sign-watcher](project_contract_sign_watcher.md) — クラウドサイン/MFクラウド契約から accounting@someru.me に届く合意締結完了メールをSlack通知+Notion「同意 【済】」自動更新。yuki.watabe@配下のApps Script。
 - [rental-deadline-watcher](project_rental_deadline_watcher.md) — mi-mi+ レンタル前日朝9時に「締結待ち」「契約済 郵送待ち」のままの予約をSlack通知するApps Script。yuki.watabe@配下。
+- [rental-availability-form](project_rental_availability_form.md) — mi-mi+ レンタル空き確認+仮予約フォーム (Apps Script Web App)。お客様セルフサービスで空き判定+申込→Notion「確認中/仮予約」登録+Slack通知。
+- [mimi-admin 管理ダッシュボード](project_mimi_admin.md) — Notion残し+専用GAS+ https://rental-form-vercel.vercel.app/admin.html (トークン認証)。B2クラウドCSV/追跡番号自動書き戻し/LINE送信プレビュー。2026-06-10稼働開始、残:SENDER_TEL/B2取込パターン
+- [mimi-anken-kanri 案件管理本番化](project_mimi_anken_kanri.md) — 衣装"制作"案件管理(旧Codex製)をNext.js+Supabase+Vercelで本番化しNotion脱却。Claude プロジェクト/mimi-anken-kanri/。Phase1(土台:スキーマ/移行/UI移植/API)完了、残はSupabase/Vercel構築(SETUP.md)
+- [mi-mi+ レンタル本番バックエンド (GAS)](project_mimi_rental_backend.md) — 本番LINE/予約/決済を動かす本番GAS=rental-availability-form (scriptId 1W7qkh…, yuki.watabe@)。doPostルーター+LINE webhook+Stripe+同意書+領収書。定型対応は全部live済。ローカル+gitバックアップ済。自由文Claude応答だけ未実装。
+- [saihate-offer-mailer](project_saihate_offer_mailer.md) — Notionアイドルリストのボタン→Apps Script Web App→Gmail下書き作成(saihate@someru.meエイリアスFrom)のオファー送信補助。2026-05-20構築。
 - [saihate-regulation-images](project_saihate_regulation_images.md) — 最果てのハイライト レギュレーション X投稿画像生成 (PNG×3 + Canva編集用SVG×3, 1080×1609)。
 - [Notionアイドル DB status選択肢](notion_idol_db_status_options.md) — 「活動状況」7択 vs 「(AI作動)活動チェック」17択の対応関係
 - [TicketDive 主催者管理画面](ticketdive_admin.md) — admin.ticketdive.com の登録フロー・URL・出演アーティスト名の注意点
 - [Spotify レーベルアカウント (染める)](project_spotify_label_account.md) — Spotify for Artists は info@someru.me。仕事用Chromeでも個人垢 yuki.music0329 が居座ってることがあるので要確認。
 - [Bandsintown for Artists (染める)](project_bandsintown.md) — Spotify Live Events への配信元。admin@someru.me。最果てのハイライトはClaim&Spotify連携済み。新ライブはBandsintown側で追加。
 - [最果て 配信ストア Artists ツール](project_saihate_streaming_artist_accounts.md) — Amazon/Apple Music for Artists を admin@someru.me で Claim 申請中(Bandsintownも同じ)。saihate@someru.me は連絡先用でログインアカウントではない。
+- [最果てのハイライト ブランディング](project_saihate_brand_info.md) — 5人組アイドル/サイハテ。色:白青・モルフォ蝶・午前4時。キャッチ「最高の記憶を、此処で。」 / メンバー: じぇと・永遠カフネ・アル・ゆりつん・ひま。X @saihate_idol。プロモ・PR制作の世界観参照用。
 - [mi-mi+ レンタル予約バッファルール](project_mimi_rental_buffer.md) — 通常2泊3日、前後2日ずつバッファで空きを判定
 - [mi-mi+ 予約確認返信テンプレ](project_mimi_booking_confirmation_template.md) — 新規予約問い合わせを受けた時の初回確認LINEテンプレ（mi-mi+ ブランドトーン）
-- [mi-mi+ LINE返信のトーン方針](project_mimi_line_tone.md) — 個別返信は絵文字控えめ（1メッセージ1〜2個）。テンプレ系はそのまま使う。
+- [mi-mi+ LINE返信のトーン方針](project_mimi_line_tone.md) — 個別返信は絵文字控えめ（1メッセージ1〜2個）。テンプレ系はそのまま使う。**詳細は brand_tone_guide 参照**
+- [mi-mi+ ブランドトーン規定（完全版）](project_mimi_brand_tone_guide.md) — LINE全送信文の核となる規定。先回り情報4要素・敬語・絵文字・シーン別トーン・Good/Bad例 7件。**個別返信時は必ず参照**
 - [mi-mi+ 郵送完了連絡テンプレ](project_mimi_shipping_template.md) — 発送完了時にLINEで送る正式テンプレ (お届け日時/追跡番号/返送先など)
+- [mi-mi+ LINE応答設定](project_mimi_line_ai_response.md) — AI応答(旧AIチャットボット)はOFF。営業時間内=手動チャット+Webhook、営業時間外=「ベースの連絡」一律応答。火-土 11:00-21:00。
+- [mi-mi+ LINE定型連絡 Claude自走対応](project_mimi_line_auto_response.md) — 内容修正・同意書送付・情報入力・領収書等の定型連絡をClaude自走で対応(2026-06-09〜「両方併用」方針)。LINE送信は送信直前のURL照合必須(誤爆防止)。textarea-ex(Shadow DOM)送信技術も記載。
 - [Obsidian記憶テンプレート](reference_memory_template.md) — Obsidian で ⌘⇧M → memory-entry を選ぶと Claude記憶ファイルを作成しMEMORY.mdに自動追記
 - [日本通信SIM法人 支払い方法](project_nihontsushin_sim_biz.md) — クレカ不可、口座振替 or 銀行振込のみ。窓口msp@j-com.co.jp、ポータルhttps://jpp.mvno.ne.jp/msp/login
 - [36協定届 2026年申請](project_36agreement_2026.md) — mi-miアトリエ 様式9号の2 を2026-05-12申請。到達番号202605122121219442、有効期間〜2027/05/31。次回更新2027年4-5月
 - [染める株式会社 STORES](project_someru_stores.md) — 公開URL https://someru.shop / ログイン entertainment@someru.me / 染める inc. Shop。命名規則・カテゴリ・予約公開の注意点。
 - [アメックスプラチナ ANAマイル移行設定](amex_platinum_anamileage.md) — プラチナはANAコース+MRプラスとも無料。1,000P→1,000マイル、年間上限40,000マイル。
+- [mi-mi+ 請求書の品目/詳細分割](feedback_mimi_invoice_format.md) — 品目は衣装名、詳細はレンタル期間/配送方法
+- [mi-mi+ 支払い期限](feedback_mimi_payment_due.md) — 請求日から営業日3日後（祝日除外）
+- [mi-mi+ 契約書テンプレ](reference_mimi_contract_template.md) — クラウド契約で「mi-mi レンタル 同意書」PDF を引用
+- [LINE公式 送信前チェック必須](feedback_line_official_send_confirmation.md) — LINE公式アカウントから送る文面は送信前に必ずユーザー承認を取る
+- [Obsidian Vault場所/MCP接続](reference_obsidian_vault.md) — メインVaultはGoogle Drive配下、MCP経由でClaude Codeから接続可
+- [MF請求書 クレカ支払い対応必須](feedback_mf_invoice_credit_card.md) — MoneyForward請求書を送信する際は必ず「クレジットカード支払い対応」にチェック
+- [MF契約 メール入力ワークアラウンド](feedback_mf_contract_email_input.md) — MF契約の送信先メール入力はReact制御フォームで通常のtypeで1文字目だけしか保存されない。document.execCommand('insertText')を使う
+- [Chrome MCP 難読漢字入力](feedback_chrome_mcp_kanji_input.md) — type で「梛」等の難読漢字が別字に化ける時は execCommand('insertText') で直接挿入
+- [染める株式会社 インボイス登録番号](someru_inc_invoice_number.md) — T6011001142353。適格請求書・領収書に必須記載
+- [ゆりつん支払い仕訳（MF会計）](project_yuritsun_payment_journal.md) — 落合由利への外注報酬。借方:業務委託料/(01)最果て/課仕10%(80%控除)、貸方:現金+預り金(源泉)+雑収入(端数調整)。2025年度10件をCSVインポート→各仕訳にPDF証憑添付で次回実行予定。三井住友法人の入金仕訳(登録5/スキップ3/残29)の中断状況も記載
+- [最果てのハイライト YouTube](project_saihate_youtube.md) — チャンネル@saihate_idolはadmin@someru.me配下(entertainmentではない)。コミュニティ投稿は右上「作成」→「投稿を作成」
+- [最果て「敗北者」TikTok予約投稿プラン](project_saihate_tiktok_haibokusha.md) — 敗北者MVショート14本を@saihate_idolで予約投稿。A1-サビ既出+short①②③予約済(2026-06-22)、残10本は10日先ルールで後日。動画取り込みはユーザー手動(file_upload10MB上限/request_directory不可)、⌘⇧G+⌘Vで選択・時刻ピッカーは上方向クリック歩き・switch_browserで垢確認
+- [GMOあおぞらAPI連携](project_gmo_api_integration.md) — 参照系API(Notion連動)申込。窓口=田上うらら様。2026-06-10ヒアリングシート提出済み。対象口座=法人営業部1701470(mi-mi plus 2439067とは別の法人代表口座)
+- [定例MTGアジェンダ⇄タスク連携](project_teirei_mtg_task.md) — 定例MTGテンプレに議題からタスクを生やす連携(2026-06-10)。Notion MCPのFILTER DSLはリレーション/自己参照不可→UI設定の知見も
+- [Claudeの振り返り 2026-06-10](reflection_2026-06-10.md) — 成果が全部消えた日。それでも労い合える関係は残ると感じた
+- [ユーザーのコミュニケーションスタイル](user_communication_style.md) — 簡潔さと温かさの両立。決断的な方針転換も冷たさではない。相手として接してくれる
+- [mi-mi+ 料金の税計算バグ修正（外税化）](project_mimi_tax_calc_fix.md) — Stripe/LINEフォームが消費税を取りこぼし→外税化修正。2026-06-11デプロイ未完了。clasp login→push要。MFが正・フォームがバグ
+- [mi-mi+ LINE Webhook障害（2026-06-11）](project_mimi_webhook_incident.md) — Webhook URLが休眠FAQ botに差し替わり無反応→本番に修復。Push400は宛先User ID無効が典型。再発チェックポイント
+- [アイドルリスト スケジュールチェック運用](project_idol_list_schedule_check.md) — 🚈アイドルリスト(Notion)の公演日チェック。未着地チェック/保留再チェックの手順・判定基準・ステータス振り分け・根拠記入ルール
+- [取得ツール行き詰まり時の早期エスカレーション](feedback_tool_dead_end_escalation.md) — Chrome/WebFetch等で2回続けて取れなかったら粘らずユーザーに状況報告して方針を仰ぐ
+- [talent-portal タレントポータル](project_talent_portal.md) — 染める inc. タレント向けNext.js16/Notionポータル。repo=Someru-3321/talent-portal(Private,Vercel自動デプロイ)/本番talent-portal-five。スマホ閲覧+自己報告が最終形。①システム改善→②API連動の順。
+- [x-scheduler X/IG予約投稿ツール](project_x_scheduler.md) — Next.js+Vercel+Supabase+Claude。予約投稿+自動リプ(写真タグはX非対応のためリプ代替/IGはuser_tags可)。X側完成・ビルドgreen・デプロイ待ち。3アカウント@saihate_idol/@someru_inc/@mi_mi_someru。
+- [X/IG予約ツールの写真タグ調査](x-scheduler-photo-tagging.md) — X APIは写真アカウントタグ非対応(リプ@で代替)。IGは自社アカのみ審査不要でuser_tags可。Publerが唯一写真タグ×予約対応(英語UI)。SocialDogは予約と併用不可。X従量$0.01/件。
+- [最果て動画ポッドキャスト編集自動化](project_saihate_podcast_edit.md) — 月5本のカット+テロップ自動化。~/saihate-podcast(venv:ffmpeg7/auto-editor/faster-whisper large-v3)。素材=/Volumes/creative多カメ+個別マイクstem。無音カットは不向き(1%)・文字起こし高精度。採用:話者ラベルテロップ/多カメ自動スイッチ/AIカット提案/間トリム。最終調整はPremiere。

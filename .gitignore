@@ -8,6 +8,10 @@
 !.obsidian/plugins/obsidian-git/data.json
 !.obsidian/plugins/templater-obsidian/data.json
 
+# Secrets / machine-local auth (never push)
+.obsidian/plugins/obsidian-git/.git_credentials_input
+.obsidian/plugins/obsidian-local-rest-api/
+
 # Trash & system
 .trash/
 .DS_Store
