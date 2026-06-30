@@ -8,7 +8,7 @@
 | ファイル | 役割 |
 |---|---|
 | `CLAUDE.md` | Claude Code グローバル指示。全セッション・全プロジェクトで読まれる。 |
-| `AGENTS.md` | Codex 用指示。中身は `CLAUDE.md` への symlink (同じ内容を共有)。 |
+| `AGENTS.md` | Codex 用指示の**実ファイル**。共通部分は `CLAUDE.md` と同内容＋Codex 固有の「接続時の注意」。`~/.codex/AGENTS.md` がこれを指す。 |
 | `memory/` | Claude Code の自動記憶ファイル群。`MEMORY.md` を起点に関連時に読まれる。 |
 | `scripts/log-to-obsidian.py` | Claude Code セッション (jsonl) を `Claude Logs/YYYY-MM-DD.md` に集約する Stop hook 用スクリプト。 |
 | `settings.template.json` | `~/.claude/settings.json` のテンプレート (Stop hook 登録済み)。 |
@@ -28,8 +28,7 @@
 |---|---|
 | `~/.claude/CLAUDE.md` | `CLAUDE.md` |
 | `~/.claude/projects/<workdir-hash>/memory/` | `memory/` |
-| `~/.codex/AGENTS.md` (Codex 入ってる場合のみ) | `AGENTS.md` |
-| `AGENTS.md` (Vault 内) | `CLAUDE.md` (Vault 内) |
+| `~/.codex/AGENTS.md` (Codex 入ってる場合のみ) | `AGENTS.md` (Codex 用実ファイル) |
 
 `<workdir-hash>` は Claude Code を実行する作業ディレクトリの絶対パスを、英数字以外を `-` に置換した文字列。デフォルトは Google Drive のマイドライブ直下を想定。
 
@@ -60,4 +59,4 @@ gh auth setup-git
 - **`.gitignore` で除外済みの秘密**: `.obsidian/plugins/*/data.json` (local-rest-api の APIキー含む)、`obsidian-git/.git_credentials_input`。push 前に `git diff --cached --name-only` で混入チェックする習慣を。
 - **コンフリクト**: Drive は `*.conflict` ファイル、git は通常の merge conflict。両方を同時に激しく編集しない。基本は Drive を主、GitHub を要所での push に使うと衝突しにくい。
 - **ロールバック**: GitHub 履歴で可能 (以前の Drive 一本化時代は不可だった)。`git log` / `git revert` が使える。
-- **Codex 固有設定**: プロジェクト固有指示はプロジェクトルートに `AGENTS.md` を別途置く (このグローバル指示とは別)。なお現状 `~/.codex/AGENTS.md` は Vault の symlink ではなく独立した実ファイル (Codex 用にカスタム済み) になっている点に注意。
+- **Codex 固有設定**: `AGENTS.md` は Codex 用の実ファイルで、`CLAUDE.md` と共通ルールを持ちつつ Codex 固有の「接続時の注意」(MCP フォールバック手順) を含む。**`CLAUDE.md` の共通ルールを変えたら `AGENTS.md` の同一箇所も手で揃える** (両者は別実ファイル)。プロジェクト固有指示は各プロジェクトルートに別途 `AGENTS.md` を置く。

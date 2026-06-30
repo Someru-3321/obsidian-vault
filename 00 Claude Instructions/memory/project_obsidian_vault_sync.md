@@ -38,7 +38,7 @@ metadata:
 **履歴の変遷**:
 - 〜2026-05-12: ローカル `~/Documents/Obsidian Vault` + Private GitHub `Someru-3321/obsidian-vault` + Obsidian Git プラグインで PC 間同期
 - 2026-05-19: Google Drive 配下に Vault を移動、Obsidian Git プラグイン無効化、Drive 同期に一本化。`.git/` フォルダと GitHub remote はアーカイブとして残置 (`Someru-3321/obsidian-vault`、新規push は手動でのみ可)。同日 [[reference_obsidian_vault]] の通り Obsidian Local REST API & MCP Server プラグインを導入し Claude Code から MCP 経由 Vault アクセス可
-- 2026-06-30: 「スマホ/他PCから操作可能に」の依頼で **GitHub 同期を復活・二重化**。①壊れていた `00 Claude Instructions/AGENTS.md` の symlink を `CLAUDE.md` に修復 ②5/19以降の memory 40件をcommit&push(GitHubが大幅に遅れていた) ③`.gitignore` に `.git_credentials_input`・`local-rest-api/` を追加し秘密のpush防止 ④remote を SSH→https(gh token)に切替。以後 Drive 自動 + GitHub の両方で同期。スマホは Claude アプリ→GitHub 経由で操作
+- 2026-06-30: 「スマホ/他PCから操作可能に」の依頼で **GitHub 同期を復活・二重化**。①壊れていた `00 Claude Instructions/AGENTS.md` の symlink を `CLAUDE.md` に修復 ②5/19以降の memory 40件をcommit&push(GitHubが大幅に遅れていた) ③`.gitignore` に `.git_credentials_input`・`local-rest-api/` を追加し秘密のpush防止 ④remote を SSH→https(gh token)に切替。以後 Drive 自動 + GitHub の両方で同期。スマホは Claude アプリ→GitHub 経由で操作 ⑤`~/.codex/AGENTS.md`(Codex固有の「接続時の注意」=MCPフォールバック手順あり)も Vault 管理化: Vault側 `AGENTS.md` を実ファイル化して Codex版を格納し、`~/.codex/AGENTS.md` をそのsymlinkに。これでCodex指示もGitHub/Drive同期に乗る。**CLAUDE.md と AGENTS.md は別実ファイル**(symlinkではない)なので共通ルール変更時は両方手で揃える。setup-symlinks.sh は変更不要(既に `~/.codex/AGENTS.md → Vault/AGENTS.md` を張る作り)
 
 **コンフリクト対策**: Drive は競合時 `*.conflict.<timestamp>` ファイルを別途作る。Obsidian の差分プラグイン等で手動マージ。Git のような自動マージは無い。
 
