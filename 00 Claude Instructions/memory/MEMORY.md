@@ -1,5 +1,5 @@
 - [開発連携標準(Claude/Codex×2PC)](project_dev_sync_standard.md) — 食い違い防止: GitHub Private正本＋STATUS.md＋AGENTS.md連携ルール。7repo(booking-portal/talent-portal/mimi-anken-kanri/rental-form-vercel/mimi-web/mimi-plus-web/mimi-admin)導入済。コミット前ブランチ確認・並行git禁止の罠も。
-- [Obsidian Vault 指示同期システム](project_obsidian_vault_sync.md) — CLAUDE.md/memory/AGENTS.md を Vault に集約しPrivate GitHub `Someru-3321/obsidian-vault` で複数PC同期。編集は Vault 内ファイルへ直接。
+- [Obsidian Vault 指示同期システム](project_obsidian_vault_sync.md) — CLAUDE.md/memory/AGENTS.md を Vault に集約し Drive自動 + Private GitHub `Someru-3321/obsidian-vault`(https/gh token) の両方で同期(2026-06-30二重化)。スマホ=Claudeアプリ→GitHub経由で操作可。編集は Vault 内ファイルへ直接。
 - [アイドルブッキングポータル](project_booking_portal.md) — booking-portal-xi.vercel.app。正本=GitHub Private `Someru-3321/booking-portal`(Claude/Codex/2PC連携・着手前pull/完了後push・STATUS.md・AGENTS.md)。`npx vercel deploy --prod`手順・Sensitive envでローカルビルド再現不可の罠・rollback。
 - [GitHub identity and experience](user_github.md) — username, email, new to git/GitHub as of 2026-05-02
 - [ユーザー本人プロフィール](user_profile.md) — 渡部勇気 (リヴェラゆき)。染める株式会社代表/プロデューサー。メディア送付等の差出人は本名「渡部勇気」
